@@ -141,7 +141,7 @@ export default class Switch extends React.Component {
       newOffset = -(handleWidth / 2);
     } else if (value) {
       newOffset = inverse ? -handleWidth : 0;
-    } else { 
+    } else {
       newOffset = inverse ? 0 : -handleWidth;
     }
 
@@ -200,7 +200,7 @@ export default class Switch extends React.Component {
 
   _handleLabelMouseMove(e){
     const { dragStart, handleWidth } = this.state;
-    
+
     if(dragStart === undefined || dragStart === null || dragStart === false)
       return;
 
@@ -212,20 +212,20 @@ export default class Switch extends React.Component {
       skipAnimation: false,
       offset: difference,
       dragged: true
-    }); 
+    });
   }
 
   _handleLabelMouseUp(){
     const { dragStart, dragged, offset, handleWidth } = this.state;
     const value = this._getValue();
-    
+
     if(dragStart === undefined || dragStart === null || dragStart === false)
       return;
 
     const { inverse, tristate } = this.props;
 
     let val;
-    
+
     if(dragged){
       val = offset > -(handleWidth / 2);
       val = inverse ? !val : val;
@@ -277,13 +277,13 @@ export default class Switch extends React.Component {
     if (typeof onChange != "function")
       return;
 
-    setTimeout(() => onChange(this, newValue), 0);
+    onChange(this, newValue);
   }
 
   render() {
     const { baseClass, inverse } = this.props;
     const { handleWidth, labelWidth, offset } = this.state;
-  
+
     const onHandle = this._renderOnHandle();
     const offHandle = this._renderOffHandle();
 
