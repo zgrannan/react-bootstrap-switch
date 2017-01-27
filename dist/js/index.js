@@ -321,15 +321,11 @@ var Switch = function (_React$Component) {
   }, {
     key: '_fireStateChange',
     value: function _fireStateChange(newValue) {
-      var _this6 = this;
-
       var onChange = this.props.onChange;
 
       if (typeof onChange != "function") return;
 
-      setTimeout(function () {
-        return onChange(_this6, newValue);
-      }, 0);
+      onChange(this, newValue);
     }
   }, {
     key: 'render',
@@ -379,7 +375,7 @@ var Switch = function (_React$Component) {
   }, {
     key: '_renderOnHandle',
     value: function _renderOnHandle() {
-      var _this7 = this;
+      var _this6 = this;
 
       var _props6 = this.props,
           baseClass = _props6.baseClass,
@@ -390,7 +386,7 @@ var Switch = function (_React$Component) {
 
       var params = {
         ref: function ref(e) {
-          return _this7.elmOnHandle = e;
+          return _this6.elmOnHandle = e;
         },
         style: { width: handleWidth },
         className: baseClass + '-handle-on ' + baseClass + '-' + onColor,
@@ -406,7 +402,7 @@ var Switch = function (_React$Component) {
   }, {
     key: '_renderOffHandle',
     value: function _renderOffHandle() {
-      var _this8 = this;
+      var _this7 = this;
 
       var _props7 = this.props,
           baseClass = _props7.baseClass,
@@ -417,7 +413,7 @@ var Switch = function (_React$Component) {
 
       var params = {
         ref: function ref(e) {
-          return _this8.elmOffHandle = e;
+          return _this7.elmOffHandle = e;
         },
         style: { width: handleWidth },
         className: baseClass + '-handle-off ' + baseClass + '-' + offColor,
@@ -433,7 +429,7 @@ var Switch = function (_React$Component) {
   }, {
     key: '_renderLabel',
     value: function _renderLabel() {
-      var _this9 = this;
+      var _this8 = this;
 
       var _props8 = this.props,
           baseClass = _props8.baseClass,
@@ -443,7 +439,7 @@ var Switch = function (_React$Component) {
 
       var params = {
         ref: function ref(e) {
-          return _this9.elmLabel = e;
+          return _this8.elmLabel = e;
         },
         style: { width: labelWidth },
         className: baseClass + '-label',
